@@ -52,8 +52,13 @@ if [ ! -d .maven ]; then
   echo -n "-----> Installing Maven 3.1.0..."
   curl --silent --max-time 60 --location $MAVEN_URL | tar xz
   mv apache-maven-3.1.0 .maven
-  mkdir .maven/m2
   chmod +x .maven/bin/mvn
+  echo " done"
+fi
+
+if [ ! -d .m2 ]; then
+  echo -n "-----> Creating .m2 dir..."
+  mkdir .m2
   echo " done"
 fi
 
