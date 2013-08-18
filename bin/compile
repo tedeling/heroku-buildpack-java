@@ -51,6 +51,7 @@ MAVEN_URL="http://www.us.apache.org/dist/maven/maven-3/3.1.0/binaries/apache-mav
 if [ ! -d .maven ]; then
   echo -n "-----> Installing Maven 3.1.0..."
   curl --silent --max-time 60 --location $MAVEN_URL | tar xz
+  mv apache-maven-3.1.0 .maven
   chmod +x .maven/bin/mvn
   echo " done"
 fi
